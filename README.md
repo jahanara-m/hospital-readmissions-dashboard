@@ -64,13 +64,13 @@ Hospitals with higher than expected readmission rates face financial penalties. 
 ## Dashboard Preview
 
 ### Full Dashboard
-![Full Dashboard](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/dashboard-full.png?raw=true)
+![Full Dashboard](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/dashboard-full.png)
 
 ### Map View (Average Score by State)
-![Map View](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/map-view.png?raw=true)
+![Map View](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/map-view.png?raw=true)
 
 ### Scatter Plot: Patient Volume vs. Readmission Score
-![Scatter Plot](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/scatter-plot.png?raw=true)
+![Scatter Plot](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/scatter-plot.png?raw=true)
 
 ---
 
