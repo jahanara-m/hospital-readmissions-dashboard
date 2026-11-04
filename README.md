@@ -23,7 +23,8 @@ Hospitals with higher than expected readmission rates face financial penalties. 
   - Heart failure (HF) 30-Day Readmission Rate
   - Pneumonia (PN) 30-Day Readmission Rate
   - Hybrid Hospital-Wide All-Cause Readmission Measure (HWR)
-- **Hospitals:** 67,1301 facilities across the U.S.
+- **Source file:** 67,074 rows covering 4,791 hospitals (one row per hospital per measure), downloaded [February 2026]
+- **Hospitals in analysis:** 4,230 (4,221 hospital-wide · 3,641 pneumonia · 3,156 heart failure)
 
 ---
 
