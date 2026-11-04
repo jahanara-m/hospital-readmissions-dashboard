@@ -66,15 +66,16 @@ Hospitals with higher than expected readmission rates face financial penalties. 
 ---
 
 ## Dashboard Preview
+*Screenshots show the **Pneumonia (PN) 30-Day Readmission Rate** measure selected. Use the "Select Measure" dropdown in the live dashboard to switch to heart failure or hospital-wide readmissions.*
 
 ### Full Dashboard
-![Full Dashboard](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/dashboard-full.png?raw=true)
+![Full Dashboard: Pneumonia selected](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/dashboard-full.png?raw=true)
 
 ### Map View (Average Score by State)
-![Map View](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/map-view.png?raw=true)
+![Map View: Pneumonia](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/map-view.png?raw=true)
 
 ### Scatter Plot: Patient Volume vs. Readmission Score
-![Scatter Plot](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/scatter-plot.png?raw=true)
+![Scatter Plot: Pneumonia](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/scatter-plot.png?raw=true)
 
 ---
 
