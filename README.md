@@ -23,7 +23,7 @@ Hospitals with higher than expected readmission rates face financial penalties. 
   - Heart failure (HF) 30-Day Readmission Rate
   - Pneumonia (PN) 30-Day Readmission Rate
   - Hybrid Hospital-Wide All-Cause Readmission Measure (HWR)
-- **Source file:** 67,074 rows covering 4,791 hospitals (one row per hospital per measure), downloaded [February 2026]
+- **Source file:** 67,074 rows covering 4,791 hospitals (one row per hospital per measure), downloaded February 2026.
 - **Hospitals in analysis:** 4,230 (4,221 hospital-wide · 3,641 pneumonia · 3,156 heart failure)
 
 ---
@@ -38,12 +38,13 @@ Hospitals with higher than expected readmission rates face financial penalties. 
 
 ## Methodology
 
-1. **Data Acquisition:** Downloaded the CMS Unplanned Hospital Visits – Provider CSV.
+1. **Data Acquisition:** Downloaded the CMS Unplanned Hospital Visits – Hospital CSV.
 2. **Data Import:** Used a Python script to load the CSV into a PostgreSQL database, handling missing values and data type issues.
 3. **Data Cleaning & Transformation:** Created SQL views to:
    - Convert text scores to numeric values.
    - Extract patient volume from the `Denominator` column (since `Number of Patients` contained "Not Applicable" for readmission rates).
    - Filter to the three measures of interest and keep only the most recent data per hospital and measure.
+   - Remove rows without a numeric score (too few cases or not reported), which left 4,230 of 4,791 hospitals.
 4. **Export for Tableau:** Exported the final view to a CSV file.
 5. **Dashboard Design:** Built an interactive dashboard in Tableau Public with:
    - A map showing average readmission scores by state.
@@ -55,17 +56,19 @@ Hospitals with higher than expected readmission rates face financial penalties. 
 
 ## Key Insights
 
-- **Wide performance range:** The best hospitals have readmission scores as low as **0–13**, while the worst exceed **58–69**.
-- **Specialty hospitals dominate the top 10 best list** – facilities focused on orthopedics and elective procedures have exceptionally low readmission rates.
-- **Patient volume does not strongly correlate with readmission performance** – high‑volume hospitals are found across the entire performance spectrum.
-- **For all three measures, the majority of hospitals perform “No Different Than the National Rate”**, but a significant minority are outliers on either side.
+- **Rates vary meaningfully across hospitals.** Heart failure readmission rates range from 14.3% to 26.6% (average 19.7%), pneumonia from 12.7% to 22.7% (16.0%), and hospital-wide from 11.7% to 19.3% (15.0%).
+- **Specialty hospitals have the lowest hospital-wide rates (11.7%–12.9%).** Orthopedic and surgical hospitals such as New England Baptist Hospital and Hospital for Special Surgery lead this measure, likely reflecting lower-risk elective patients. They do not report heart failure or pneumonia, so they are excluded from those comparisons.
+- **Patient volume has almost no relationship with readmission rates.** Correlation is −0.04 for heart failure, 0.01 hospital-wide, and 0.13 for pneumonia (weak). High- and low-volume hospitals appear across the full range.
+- **Over 90% of hospitals are statistically indistinguishable from the national rate.** 96.4% for heart failure, 97.7% for pneumonia, and 91.9% hospital-wide. CMS flags a hospital only when its difference is statistically clear, so true outliers are rare.
+- **Pneumonia outliers skew worse.** 60 hospitals are worse than the national rate versus 22 better, about 3 to 1. Heart failure is balanced (57 worse, 56 better).
+- **Data validation note:** an early version of the dashboard summed rates across measures, which inflated scores for hospitals reporting all three measures and made single-measure specialty hospitals look best. The dashboard now ranks hospitals within one measure using average rates.
 
 ---
 
 ## Dashboard Preview
 
 ### Full Dashboard
-![Full Dashboard](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/dashboard-full.png)
+![Full Dashboard](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/dashboard-full.png?raw=true)
 
 ### Map View (Average Score by State)
 ![Map View](https://github.com/jahanara-m/hospital-readmissions-dashboard/blob/main/images/map-view.png?raw=true)
